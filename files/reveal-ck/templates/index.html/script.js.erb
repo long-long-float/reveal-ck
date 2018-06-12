@@ -17,6 +17,10 @@
     ]
   };
 
+  <% config.dependencies.each do |plugin| %>
+    baseOptions.dependencies.push({ src: 'plugin/<%= plugin %>', async: true });
+  <% end %>
+
   <% plugin_files.each do |plugin| %>
     baseOptions.dependencies.push({ src: '<%= plugin %>', async: true });
   <% end %>
